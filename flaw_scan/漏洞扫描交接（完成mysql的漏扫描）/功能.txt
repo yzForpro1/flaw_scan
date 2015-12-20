@@ -1,0 +1,35 @@
+快速扫描功能:
+一、针对主机的漏洞快速扫描
+ShowAllInfoOfkvm_flaw.py 执行后现实所有有关kvm的漏洞信息；其余的libvirt，Ovirt,VDSM一样
+
+
+ShowInfoOfScankvm_flaw.py 执行后显示快速扫描的结果；其余的libvirt，Ovirt,VDSM一样
+
+1、针对KVM的漏洞扫描
+	功能：针对'ubuntu','qemu','kernal'三个涉及产品及版本进行扫描
+	输出格式如下：
+		漏洞名称：QEMU code_gen_buffer缓冲区本地溢出漏洞 
+		漏洞信息：QEMU在处理畸形数据数据时存在漏洞，本地攻击者可能利用此漏洞导致系统崩溃。 本地攻击者可以通过发送超长数据溢出QEMU的code_gen_buffer缓冲区，
+			   覆盖TranslationBlock缓冲区，导致拒绝服务的情况。	 	
+
+2、针对libvirt的漏洞快速扫描
+	功能：针对'libvirt','openstack','redhat-release'三个涉及的产品及版本进行扫描	
+	输出格式：
+		漏洞名称：Red Hat libvirt 资源管理错误漏洞(CNNVD-201410-121) 
+		漏洞信息：Red Hat libvirt 1.2.8及之前版本中的conf/domain_conf.c脚本中的‘virDomainListPopulate’函数中存在安全漏洞，
+		该漏洞源于程序没有正确清除域列表的锁定。远程攻击者可借助virConnectListAllDomains API命令的‘second’参数的空值利用该漏洞造成拒绝服务（死锁）。
+
+3、针对Ovirt的漏洞快速扫描
+	功能：针对'rhevm','rbovirt','ovirt'三个涉及的产品及版本进行扫描
+	输出格式：
+		漏洞名称：oVirt SSL证书验证安全绕过漏洞(CNNVD-201208-493) 
+		漏洞信息：oVirt 3.1版本中的python SDK 3.1.0.6之前版本和CLI 3.1.0.8之前版本中存在安全绕过漏洞，该漏洞源于应用程序未正确验证从服务器接收到的SSL证书。
+		攻击者可利用该漏洞执行中间人攻击或冒充信任的服务器，且有助于进一步攻击。 
+
+4、针对VDSM的漏洞快速扫描
+	功能：针对'enterprise_virtualization'涉及的产品及版本进行扫描
+	输出格式：
+		漏洞名称：xxxxxx证书验证安全绕过漏洞(xxxxxxxx) 
+		漏洞信息：xxxxxxxxxxxxxx版本中的python SDK 3.1.0.6之前版本和CLI 3.1.0.8之前版本中存在安全绕过漏洞，该漏洞源于应用程序未正确验证从服务器接收到的SSL证书。
+		攻击者可利用该漏洞执行中间人攻击或冒充信任的服务器，且有助于进一步攻击。 
+
